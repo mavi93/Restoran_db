@@ -1,0 +1,22 @@
+.test1 {
+	width: 100px;
+	height: 30px;
+	border: solid 1px #ccc;
+	border-radius: 3px;
+	margin-top: 20px;
+	transition: all 0.2s easy-in-out;
+}
+
+.test1:focus {
+	width: 150px;
+	//outline: none;
+}
+
+.main_block {
+	width: 100%;
+	text-align: center;
+}
+.center_block {
+	width: 300px;
+	margin: 0 auto;
+}
