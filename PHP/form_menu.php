@@ -1,6 +1,6 @@
 <?php
-	mysql_connect("localhost", "mavi", "farcry");
-	mysql_select_db("restoran");
+	mysql_connect("localhost", "mavi", "farcry") or die("Невозможно подключиться: " .mysql_error());
+	mysql_select_db("restoran") or die("Не возможно выбрать базу данных: " .mysql_error());
 
 	if(isset($_POST['submit']))
 	{
@@ -17,4 +17,5 @@
 			echo "Shit!";
 		}
 	}
+	mysql_close();
 ?>
