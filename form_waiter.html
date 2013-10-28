@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 	<head>
-		<title>Страница директора</title>
+		<title>Страница официанта</title>
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="style.css">
 	</head>
 	<body>
 		<div class="main_block">
 			<form class="form-signin">
+				<fieldset>
 					<b>Выберите действие</b>
-					<p><input name="work" type="button" value="Список сотрудников" onclick="location.href='PHP/show_workers.php'" class="btn"></p>
-					<p><input name="rep" type="button" value="Сформировать отчёт" onclick="location.href='make_report.html'" class="btn"></p>
+					<p><input name="order" type="button" value="Принять заказ" onclick="location.href='make_order.html'" class="btn"></p>
 					<p><input name="exit" type="button" value="Выход" onclick="location.href='form_menu.html'" class="btn"></p>
+				</fieldset>
 			</form>
 		</div>
 	</body>

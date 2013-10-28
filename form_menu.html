@@ -1,21 +1,22 @@
-<html>
-<head>
-	<title>Вход</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<link rel="stylesheet" type="text/css" href="style.css" />
-</head>
-<body>
-	<div class="main_block">
-	<div class="center_block">
-		<form action="PHP/form_menu.php" method="post">
-			<fieldset>
-				<b>Вход в базу данных</b>
-				<p><input name="login" placeholder="Логин" class="test1"></p>
-				<p><input name="password" type="password" placeholder="Пароль" class="test1"></p>
-				<p><input type="submit" name="submit" value="Войти"></p>
-			</fieldset>
-		</form>
-	</div>
-	</div>
-</body>
+<!DOCTYPE html>
+	<head>
+		<title>Вход</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<div class="main_block">
+			<form action="PHP/index.php" method="post" class="form-signin">
+					<b><h2>Вход в базу данных</h2></b>
+					<p><input name="login" type="text" placeholder="Логин" class="test1" required></p>
+					<p><input name="password" type="password" placeholder="Пароль" class="test1" required></p>
+					<br>
+					<input type="submit" name="submit1" value="Войти" class="btn">
+					<input type="reset" value="Очистить" class="btn">
+					<p><input type="submit" name="submit2" value="Доп.задание" class="btn"></p>
+
+			</form>
+		</div>
+		<div class="footer"><a href="bender.html"> Алексей Суппес</a></div>
+	</body>
 </html>
