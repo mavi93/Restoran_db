@@ -1,0 +1,41 @@
+<!doctype html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="style.css">
+		<title>Добавление рабочего</title>
+		<style>
+			body{
+				width: 70%;
+			}
+		</style>
+	</head>
+	<body>
+		<form action="PHP/add_workers.php" method="post" class="form-signin2">
+		<table cellpadding="5">
+			<tr>
+				<th><p>Фамилия*</p></th>
+				<th><p>Дата рождения*</p></th>
+				<th><p>Адрес*</p></th>
+				<th><p>Дата принятия на работу*</p></th>
+				<th><p>Должность*</p></th>
+				<th><p>Дата увольнения</p></th>
+				<th><p>Оклад*</p></th>
+				<th><p>Дата установки оклада*</p></th>
+			</tr>
+			<tr>
+				<td><input name="lastname" type="text" placeholder="Cуппес" class="" required></td>
+				<td><input name="birthday" type="date" class="" required></td>
+				<td><input name="adress" type="text" placeholder="ул.Бакунинская 3 кв. 120" class="" required></td>
+				<td><input name="dateadmis" type="date" class="" required></td>
+				<td><input name="post" type="text" placeholder="Официант" class="" required></td>
+				<td><input name="firedate" type="date" class=""></td>
+				<td><input name="pay" type="text" placeholder="15000" class="" required></td>
+				<td><input name="payinsdate" type="date" class="" required></td>
+			</tr>
+		</table>
+		<br />
+		<input type="submit" name="submit" value="Добавить" class="btn">
+		<input name="return" type="button" value="Вернуться назад" onclick="location.href='PHP/show_workers.php'" class="btn">
+		</form>
+	</body>
+</html>
