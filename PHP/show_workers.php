@@ -2,7 +2,10 @@
 	<head>
 		<title>Список сотрудников</title>
 		<meta charset="utf-8">
+		<link rel="stylesheet" href="../bootstrap.css">
 		<link rel="stylesheet" href="../style.css">
+
+		
 	</head>
 	<body>
 		<?php
@@ -47,9 +50,10 @@
 					    $qr_result = mysql_query("SELECT * FROM worker WHERE id_work='$id' ") or die("Запрос не удался" .mysql_error());
 						while($data = mysql_fetch_array($qr_result)) 
 						{
-							echo '<form action="PHP/add_workers.php" method="post" class="">';
+							echo '<form action="../PHP/update_worker.php" method="post" class="">';
 							echo '<table border="1" align=center>';
 							echo '<tr>';
+							//echo '<th><p>#</p></th>';
 							echo '<th><p>Фамилия*</p></th>';
 							echo '<th><p>Дата рождения*</p></th>';
 							echo '<th><p>Адрес*</p></th>';
@@ -60,6 +64,7 @@
 							echo '<th><p>Дата установки оклада*</p></th>';
 							echo '</tr>';
 							echo '<tr>';
+							echo '<input name="id" type="hidden" value="'.$data['id_work'].'" class="">';
 							echo '<td><input name="lastname" type="text" placeholder="Cуппес" value="'.$data['last_name'].'" class="" required></td>';
 							echo '<td><input name="birthday" type="date" value="'.$data['birthday'].'" class="" required></td>';
 							echo '<td><input name="adress" type="text" value="'.$data['adress'].'" placeholder="ул.Бакунинская 3 кв. 120" class="" required></td>';
@@ -70,7 +75,11 @@
 							echo '<td><input name="payinsdate" value="'.$data['date_inst_pay'].'" type="date" class="" required></td>';
 							echo '</tr>';
 							echo '</table>';
-							echo '<p><input type="submit" name="submit_edit" value="Изменить данные" class="btn"></p>';
+							echo '<br>';
+							echo '<input type="submit" name="submit_edit" value="Изменить данные" class="btn">';
+							//echo '<p><input type="button" name="return" value="Вернуться назад" class="btn"></p>';
+							echo '<input name="return" type="button" value="Вернуться назад" onclick="location.href=\'../PHP/show_workers.php\'" class="btn">';
+							echo '</form>';
 						}
 					}
 	   			break;
@@ -82,8 +91,7 @@
 				default:	
 					$qr_result = mysql_query("SELECT * FROM `worker`") or die("Запрос не удался" .mysql_error());
 
-					echo '<table border="1" align=center>';
-					echo '<thead>';
+					echo '<table border="1" align=center class="table">';
 					echo '<tr>';
 					echo '<th>Номер</th>';
 					echo '<th>Фамилия</th>';
@@ -91,9 +99,7 @@
 					echo '<th>Адресс</th>';
 					echo '<th>Должность</th>';
 					echo '</tr>';
-					echo '</thead>';
-					echo '<tbody>';
-
+					
 					while($data = mysql_fetch_array($qr_result))
 					{
 						echo '<tr>';
@@ -110,18 +116,26 @@
 						echo '<td> <a href="?do=edit&id='.$data['id_work'].'"><input name="edit_work" type="button" value="Edit" class="btn"></a> </td>';
 						echo '<tr>';
 					}
-					echo '</tbody>';
 					echo '</table>';
 					mysql_free_result($qr_result);
+					echo '<br>';
+					echo '<div align=center>';
+					echo '<input name="add_work" type="button" value="Добавить сотрудника" onclick="location.href=\'../add_workers.html\'" class="btn">';
+					echo '<input name="return" type="button" value="Вернуться назад" onclick="location.href=\'../form_director.html\'" class="btn">';
+
+					//echo '<input name="del_work" type="button" value="Удалить сотрудника" onclick="location.href=\'del_workers.php\'" class="btn">';
+					echo '<input name="exit" type="button" value="Выход" onclick="location.href=\'../form_menu.html\'" class="btn">';
+					echo '</div>';
 				break;
 			}	
 			mysql_close();
 		?>
+		<!--
 		<br>
 		<div align=center>
 			<input name="add_work" type="button" value="Добавить сотрудника" onclick="location.href='../add_workers.html'" class="btn">
 			<input name="del_work" type="button" value="Удалить сотрудника" onclick="location.href='del_workers.php'" class="btn">
 			<input name="exit" type="button" value="Выход" onclick="location.href='../form_menu.html'" class="btn">
-		</div>
+		</div>-->
 	</body>
 </html>

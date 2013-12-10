@@ -12,36 +12,49 @@
 
           if (isset($_POST['submit1'])) 
           {
-            error_reporting(0);
-            if ( mysql_connect('localhost', $login, $password) )
+            mysql_connect('localhost', 'select', 'arneus1993') or die ("Не удалось подключиться к MySQL: ".mysql_error());
+            mysql_select_db('restoran') or die ("Не удалось подключиться к базе данных: ".mysql_error());
+            $query = "SELECT type FROM worker WHERE last_name='$login' AND pwd='$password' ";
+            if($type = mysql_fetch_array(mysql_query($query)))
             {
-              mysql_select_db('restoran') or die("Невозможно подключиться к базе данных: " .mysql_error());
-              if ($login=='director')
+              if ($type[type] == 1)
               {
-                header("location:http://Localhost/bdrest/form_director.html");
-                exit();
+              setcookie("login", "director", time()+3600*3);
+              setcookie("password", "director", time()+3600*3); 
+              header("location:../form_director.html");
+              exit();
               }
-              if ($login=='waiter')
+
+              if ($type[type] == 2)
               {
-                header("location:http://Localhost/bdrest/form_waiter.html");
-                exit();
+              setcookie("login", "waiter", time()+3600*3);
+              setcookie("password", "waiter", time()+3600*3);
+              header("location:../form_waiter.html");
+              exit();
               }
-              if ($login=='cook')
+
+              if ($type[type] == 3)
               {
-                header("location:http://Localhost/bdrest/form_cook.html");
-                exit();
+              setcookie("login", "cook", time()+3600*3);
+              setcookie("password", "cook", time()+3600*3);
+              header("location:../PHP/formcook.php");
+              exit();
               }
-              mysql_close();
             }
-            else
+            else 
             {
-                echo "Пароль не верный!";
+            echo("<h2>Вы ввели не правильный логин или пароль!</h2>");
             }
           }
 
           if (isset($_POST['submit2'])) 
           {
-            echo "Ку-ку!";
+            if ( mysql_connect('localhost', $login, $password) )
+            {
+              header("location: ../extratask.html");
+              exit();
+            }
+            //echo "Ку-ку!";
           }
         ?>
         <p><input type="button" value="Ввести ещё раз" onclick="location.href='../form_menu.html'" class="btn"></p>

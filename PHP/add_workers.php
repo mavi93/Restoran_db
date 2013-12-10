@@ -1,7 +1,6 @@
 <?php
-	
-	mysql_connect("localhost", "mavi", "farcry") or die("Íå óäàëîñü ñîåäèíèòüñÿ: " .mysql_error());
-	mysql_select_db("restoran") or die("Íå óäàëîñü âûáðàòü áàçó äàííûõ: " .mysql_error());
+	mysql_connect("localhost", "mavi", "farcry") or die("ÃÃ¥ Ã³Ã¤Ã Ã«Ã®Ã±Ã¼ Ã±Ã®Ã¥Ã¤Ã¨Ã­Ã¨Ã²Ã¼Ã±Ã¿: " .mysql_error());
+	mysql_select_db("restoran") or die("ÃÃ¥ Ã³Ã¤Ã Ã«Ã®Ã±Ã¼ Ã¢Ã»Ã¡Ã°Ã Ã²Ã¼ Ã¡Ã Ã§Ã³ Ã¤Ã Ã­Ã­Ã»Ãµ: " .mysql_error());
 
 	$lastname = $_POST['lastname'];
 	$birthday = $_POST['birthday'];
@@ -16,9 +15,9 @@
 
 	$result = mysql_query("INSERT INTO worker (last_name, birthday, adress, date_admis, post, fire_data, pay, date_inst_pay)
 							VALUES ('$lastname', '$birthday', '$adress', '$dateadmis', '$post', '$firedate', '$pay', '$payinsdate')");
-	//Åñëè çàïðîñ ïðîéäåò óñïåøíî òî â ïåðåìåííóþ result âåðíåòñÿ true
+	//Ã…Ã±Ã«Ã¨ Ã§Ã Ã¯Ã°Ã®Ã± Ã¯Ã°Ã®Ã©Ã¤Ã¥Ã² Ã³Ã±Ã¯Ã¥Ã¸Ã­Ã® Ã²Ã® Ã¢ Ã¯Ã¥Ã°Ã¥Ã¬Ã¥Ã­Ã­Ã³Ã¾ result Ã¢Ã¥Ã°Ã­Ã¥Ã²Ã±Ã¿ true
 	if($result == 'true') 
-		{echo "Âàøè äàííûå óñïåøíî äîáàâëåíû";}
+		{header("location: show_workers.php");}
 	else
-		{echo "Âàøè äàííûå íå äîáàâëåíû";}
+		{echo "Ã‚Ã Ã¸Ã¨ Ã¤Ã Ã­Ã­Ã»Ã¥ Ã­Ã¥ Ã¤Ã®Ã¡Ã Ã¢Ã«Ã¥Ã­Ã»";}
 ?>

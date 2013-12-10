@@ -5,14 +5,11 @@
 		<link rel="stylesheet" href="style.css">
 	</head>
 	<body>
-		<div class="main_block">
-			<form class="form-signin">
-				<fieldset>
-					<b>Выберите действие</b>
-					<p><input name="order" type="button" value="Просмотреть заказы" onclick="location.href='PHP/show_orders.php'" class="btn"></p>
-					<p><input name="exit" type="button" value="Выход" onclick="location.href='form_menu.html'" class="btn"></p>
-				</fieldset>
-			</form>
+		<div align="center" class="form-signin">
+			<p><h4>Выберите действие</h4></p>
+			<p><input name="order" type="button" value="Просмотреть заказы" onclick="location.href='PHP/show_orders.php'" class="btn btn-primary"></p>
+			<p><input name="add_order" type="button" value="Принять заказ" onclick="location.href='PHP/add_order.php'" class="btn btn-primary"></p>
+			<p><input name="exit" type="button" value="Выход" onclick="location.href='form_menu.html'" class="btn btn-primary"></p>
 		</div>
 	</body>
 </html>
