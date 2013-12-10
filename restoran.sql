@@ -396,7 +396,11 @@ INSERT INTO `worker` (`id_work`, `last_name`, `pwd`, `type`, `birthday`, `adress
 --
 ALTER TABLE `order`
   ADD CONSTRAINT `id_tab` FOREIGN KEY (`id_tab`) REFERENCES `table` (`id_tab`),
+<<<<<<< HEAD
   ADD CONSTRAINT `id_work` FOREIGN KEY (`id_work`) REFERENCES `worker` (`id_work`) ON DELETE CASCADE;
+=======
+  ADD CONSTRAINT `id_work` FOREIGN KEY (`id_work`) REFERENCES `worker` (`id_work`);
+>>>>>>> 8a08c0a9d793f5cad282f66b8e23cde7a29af633
 
 --
 -- Ограничения внешнего ключа таблицы `orderline`

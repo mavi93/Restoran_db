@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 <html lang="ru-RU">
   <head>
     <meta charset="UTF-8">
+=======
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+>>>>>>> 8a08c0a9d793f5cad282f66b8e23cde7a29af633
     <link rel="stylesheet" href="../style.css">
   </head>
   <body>
@@ -12,7 +18,11 @@
 
           if (isset($_POST['submit1'])) 
           {
+<<<<<<< HEAD
             mysql_connect('localhost', 'root', '') or die ("Не удалось подключиться к MySQL: ".mysql_error());
+=======
+            mysql_connect('localhost', 'select', 'arneus1993') or die ("Не удалось подключиться к MySQL: ".mysql_error());
+>>>>>>> 8a08c0a9d793f5cad282f66b8e23cde7a29af633
             mysql_select_db('restoran') or die ("Не удалось подключиться к базе данных: ".mysql_error());
             $query = "SELECT type FROM worker WHERE last_name='$login' AND pwd='$password' ";
             if($type = mysql_fetch_array(mysql_query($query)))
@@ -37,7 +47,11 @@
               {
               setcookie("login", "cook", time()+3600*3);
               setcookie("password", "cook", time()+3600*3);
+<<<<<<< HEAD
               header("location:../PHP/forcook.php");
+=======
+              header("location:../PHP/formcook.php");
+>>>>>>> 8a08c0a9d793f5cad282f66b8e23cde7a29af633
               exit();
               }
             }
