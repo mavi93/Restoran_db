@@ -2,7 +2,6 @@
 	<head>
 		<title>Список сотрудников</title>
 		<meta charset="utf-8">
-<<<<<<< HEAD
 		<link rel="stylesheet" href="../style.css">
 		<style>
 			.form-signin{
@@ -21,14 +20,6 @@
 	</head>
 	<body>
 	
-=======
-		<link rel="stylesheet" href="../bootstrap.css">
-		<link rel="stylesheet" href="../style.css">
-
-		
-	</head>
-	<body>
->>>>>>> 8a08c0a9d793f5cad282f66b8e23cde7a29af633
 		<?php
 			mysql_connect("localhost", "mavi", "farcry") or die("Не удалось соединиться: " .mysql_error());
 			mysql_select_db("restoran") or die("Не удалось выбрать базу данных: " .mysql_error());
@@ -54,16 +45,11 @@
 				            header("location: show_workers.php");
 				        }
 				        else
-<<<<<<< HEAD
 				        {	
 				        	echo "<div class='form-signin'>";
 				        	echo "Невозможно удалить данного пользователя!";
 				        	echo '<br/><input name="return" type="button" value="Вернуться назад" onclick="location.href=\'../PHP/show_workers.php\'" class="btn">';
 				        	echo "</div>";
-=======
-				        {
-				        	//header("location: show_workers.php");
->>>>>>> 8a08c0a9d793f5cad282f66b8e23cde7a29af633
 				        }
 				    }
 			    break;
@@ -78,18 +64,10 @@
 				    {
 					    $qr_result = mysql_query("SELECT * FROM worker WHERE id_work='$id' ") or die("Запрос не удался" .mysql_error());
 						while($data = mysql_fetch_array($qr_result)) 
-<<<<<<< HEAD
 						{	
 							echo '<form action="../PHP/update_worker.php" method="post" class="form-signin2">';
 							echo '<table align=center>';
 							echo '<tr>';
-=======
-						{
-							echo '<form action="../PHP/update_worker.php" method="post" class="">';
-							echo '<table border="1" align=center>';
-							echo '<tr>';
-							//echo '<th><p>#</p></th>';
->>>>>>> 8a08c0a9d793f5cad282f66b8e23cde7a29af633
 							echo '<th><p>Фамилия*</p></th>';
 							echo '<th><p>Дата рождения*</p></th>';
 							echo '<th><p>Адрес*</p></th>';
@@ -127,12 +105,8 @@
 				default:	
 					$qr_result = mysql_query("SELECT * FROM `worker`") or die("Запрос не удался" .mysql_error());
 
-<<<<<<< HEAD
 					echo "<div class='form-signin'>";
 					echo '<table align=center>';
-=======
-					echo '<table border="1" align=center class="table">';
->>>>>>> 8a08c0a9d793f5cad282f66b8e23cde7a29af633
 					echo '<tr>';
 					echo '<th>Номер</th>';
 					echo '<th>Фамилия</th>';
@@ -150,13 +124,6 @@
 						echo '<td> '.$data['adress']. '</td>';
 						echo '<td> '.$data['post'].' </td>';
 						echo '<td> <a href="?do=delete&id='.$data['id_work'].'" onclick="return confirm(\'Вы действительно хотите удалить этого пользователя?\') "><input name="del_work" type="button" value="-" class="btn"></a> </td>';
-<<<<<<< HEAD
-=======
-						//echo '<td> <input name="del_work" type="button" value="-" onclick="location.href=\'show_workers.php?do=delete&id=".$data[\'id_work\'].\'"" class="btn"> </td>';
-						//echo '<td><input type="submit" name="del_work" value="-" onclick="if(confirm(\'Точно хочешь удалить?\'))location.href="/PHP/show_workers.php?do=delete&id=".$data[\'id_work\'].""; else return false;" class="btn">';
-						//echo "<td> <a href=\"?do=edit&id=".$data['id_work']."\"> Правка </a> </td>";
-						//echo "<td> <a href=\"?do=delete&id=".$data['id_work']."\"> удалить </a> </td>";
->>>>>>> 8a08c0a9d793f5cad282f66b8e23cde7a29af633
 						echo '<td> <a href="?do=edit&id='.$data['id_work'].'"><input name="edit_work" type="button" value="Edit" class="btn"></a> </td>';
 						echo '<tr>';
 					}
@@ -166,27 +133,12 @@
 					echo '<div align=center>';
 					echo '<input name="add_work" type="button" value="Добавить сотрудника" onclick="location.href=\'../add_workers.html\'" class="btn">';
 					echo '<input name="return" type="button" value="Вернуться назад" onclick="location.href=\'../form_director.html\'" class="btn">';
-<<<<<<< HEAD
-=======
-
-					//echo '<input name="del_work" type="button" value="Удалить сотрудника" onclick="location.href=\'del_workers.php\'" class="btn">';
->>>>>>> 8a08c0a9d793f5cad282f66b8e23cde7a29af633
 					echo '<input name="exit" type="button" value="Выход" onclick="location.href=\'../form_menu.html\'" class="btn">';
 					echo '</div>';
 				break;
 			}	
 			mysql_close();
 		?>
-<<<<<<< HEAD
 		</div>
-=======
-		<!--
-		<br>
-		<div align=center>
-			<input name="add_work" type="button" value="Добавить сотрудника" onclick="location.href='../add_workers.html'" class="btn">
-			<input name="del_work" type="button" value="Удалить сотрудника" onclick="location.href='del_workers.php'" class="btn">
-			<input name="exit" type="button" value="Выход" onclick="location.href='../form_menu.html'" class="btn">
-		</div>-->
->>>>>>> 8a08c0a9d793f5cad282f66b8e23cde7a29af633
 	</body>
 </html>

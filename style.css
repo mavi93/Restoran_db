@@ -73,7 +73,6 @@ table{
 }
 
 .mrl{
-<<<<<<< HEAD
 	background-color: rgb(239, 240, 242);
 	border-bottom-left-radius: 6px;
 	border-bottom-right-radius: 6px;
@@ -92,32 +91,12 @@ table{
 
 body{
 	text-align: center;
-=======
-background-color: rgb(239, 240, 242);
-border-bottom-left-radius: 6px;
-border-bottom-right-radius: 6px;
-border-top-left-radius: 6px;
-border-top-right-radius: 6px;
-color: rgb(52, 73, 94);
-display: block;
-font-family: Lato, sans-serif;
-font-size: 14px;
-height: 199px;
-line-height: 17px;
-margin-right: 20px;
-position: relative;
-width: 200px;
-}
-
-.abs-center{
->>>>>>> 8a08c0a9d793f5cad282f66b8e23cde7a29af633
 	display: table;
 	width: 50%;
 	overflow: auto;
 	margin: auto;
 	position: absolute;
 	top: 0; left: 0; bottom: 0; right: 0;
-<<<<<<< HEAD
 }
 
 .form-signin2 {
@@ -130,6 +109,3 @@ width: 200px;
 	border-radius: 7px;
 
 }
-=======
-}
->>>>>>> 8a08c0a9d793f5cad282f66b8e23cde7a29af633
