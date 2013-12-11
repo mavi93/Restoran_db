@@ -44,16 +44,15 @@
             <div id="block">
             <div class="bar">
                 <?php
-                echo "<td><select name='id_menu[]'>";
-                echo "<option disabled selected>Блюдо</option>";
-                $result = mysql_query("SELECT * FROM menu") or die('Query failed: ' . mysql_error());
-                //echo "<td><select name='id_menu[]'>";
-                while ($data = mysql_fetch_assoc($result))
-                {
-                    echo '<option value="'.$data['id_m'].'">'.$data['name_blud'];
-                }
-                echo "</select>\n</td>";
-            ?>    
+                    echo "<td><select name='id_menu[]'>";
+                    echo "<option disabled selected>Блюдо</option>";
+                    $result = mysql_query("SELECT * FROM menu") or die('Query failed: ' . mysql_error());
+                    while ($data = mysql_fetch_assoc($result))
+                    {
+                        echo '<option value="'.$data['id_m'].'">'.$data['name_blud'];
+                    }
+                    echo "</select>\n</td>";
+                ?>    
  
             <input name='num[]' type='number' min='0' class='form-control input-sm'>
             <script type="text/javascript">
