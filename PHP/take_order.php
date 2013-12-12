@@ -31,10 +31,6 @@
     </tr>
     </table>    
         
-
-       
-        
-
           <table cellspacing="5" cellpadding="5" width="100%">
             <tr>
                 <th>Блюдо</th>

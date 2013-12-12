@@ -7,11 +7,13 @@
 	<style>
 		.form-signin{
 			max-width: 500px;
+			height: 300px;
+			overflow: auto;
 		}
 	</style>
 </head>
 <body>
-	<div class="form-signin">
+	<div class="">
 	<?php
 		mysql_connect("localhost", "mavi", "farcry") or die("Не удалось соединиться: " .mysql_error());
 		mysql_select_db("restoran") or die("Не удалось выбрать базу данных: " .mysql_error());
@@ -63,7 +65,7 @@
 		if($result)
 		{
 
-			echo '<table cellspacing="5" cellpadding="5" width="100%">
+			echo '<table cellspacing="5" border="1" cellpadding="5" width="100%" class="form-signin">
 						<tr>
 							<th>№</th>
 							<th>Блюдо</th>
